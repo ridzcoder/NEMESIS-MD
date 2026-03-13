@@ -28,10 +28,10 @@ DON'T FORGET TO FORK 🍴 & STAR 🌟 OUR REPO🫠
 ```
 ---
 
-> **CURRENT BOT VERSION ➜ `1.0.0. ⚡`**
+> **CURRENT BOT VERSION ➜ `2.0.0. ⚡`**
 ---
 
-<a><img src='https://files.catbox.moe/sbgnhh.png'/></a>
+<a><img src='https://files.catbox.moe/qhl7st.png'/></a>
 
 <!-- ⚡ TYPING EFFECT -->
 <p align="center">
