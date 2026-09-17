@@ -1,7 +1,7 @@
 
 
 <p align="center">
-  <h1 align="center" style="font-family: 'Orbitron', sans-serif; text-shadow: 0 0 10px #00ffff, 0 0 20px #0088ff;">NEMESIS MD V3/></h1>
+  <h1 align="center" style="font-family: 'Orbitron', sans-serif; text-shadow: 0 0 10px #00ffff, 0 0 20px #0088ff;">NEMESIS MD V2.1.0/></h1>
 </p>
 
 <p align="center">
@@ -28,7 +28,7 @@ DON'T FORGET TO FORK 🍴 & STAR 🌟 OUR REPO🫠
 ```
 ---
 
-> **CURRENT BOT VERSION ➜ `3.0.0. ⚡`**
+> **CURRENT BOT VERSION ➜ `2.1.0. ⚡`**
 ---
 
 <a><img src='https://files.catbox.moe/dynze8.png'/></a>
@@ -44,7 +44,7 @@ DON'T FORGET TO FORK 🍴 & STAR 🌟 OUR REPO🫠
 ## 📡 DEPLOYMENT SITES
 
 <p align="center">
-Deploy <strong>NEMESIS MD V3</strong> on your preferred platform.
+Deploy <strong>NEMESIS MD V2.1</strong> on your preferred platform.
 </p>
 
 <p align="center">
@@ -104,7 +104,7 @@ Deploy <strong>NEMESIS MD V3</strong> on your preferred platform.
 <br/>
 
 <div align="center">
-  <a href="https://session-id-dkqa.onrender.com/">
+  <a href="https://session.ridzcoder.xyz/">
     <img src="https://img.shields.io/badge/🌐%20SESSION%20ID-Visit-black?style=for-the-badge">
   </a>
 </div>
@@ -151,7 +151,7 @@ ___
 📢 Get updates, fixes, and sneak peeks directly from the official channel.
 </p>
 
-<a href="https://whatsapp.com/channel/0029VbBATdIJJhzOXep1c31K" target="_blank">
+<a href="https://whatsapp.com/channel/0029Vb73EYZFXUujAoHFor1i" target="_blank">
   <img src="https://img.shields.io/badge/JOIN_CHANNEL-NOW-8A2BE2?style=for-the-badge&logo=whatsapp&logoColor=white&labelColor=111111" alt="Join WhatsApp Channel"/>
 </a>
 
