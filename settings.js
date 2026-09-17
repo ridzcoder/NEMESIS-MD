@@ -1,49 +1,28 @@
-const fs = require('fs');
-if (fs.existsSync('config.env')) require('dotenv').config({ path: './config.env' });
+// Base by Kevin tech 
+// from the maker of Jexploit bot
+//256742932677 
 
-function convertToBool(text, fault = 'true') {
-    return text === fault ? true : false;
-}
 
-module.exports = {
-SESSION_ID: process.env.SESSION_ID || "Nemesis~eyJub2lzZUtleSI6eyJwcml2YXRlIjp7InR5cGUiOiJCdWZmZXIiLCJkYXRhIjoiRUJIUlRRdXJjaktRVHNEOE1XRWJadlBQMEJ1U2l2RGNYMHRyL1FBUDdtaz0ifSwicHVibGljIjp7InR5cGUiOiJCdWZmZXIiLCJkYXRhIjoiczRwR3VRZ3p6Yi9hWU5KeEZqQ09FTkVhUFpFaHhwaGZjZHJTVE82d3BIQT0ifX0sInBhaXJpbmdFcGhlbWVyYWxLZXlQYWlyIjp7InByaXZhdGUiOnsidHlwZSI6IkJ1ZmZlciIsImRhdGEiOiJhRExIcnJmTkJtTmI5MHJTMnRER2NhZFByQlJTTG00eXY1WUtRdDlaL2swPSJ9LCJwdWJsaWMiOnsidHlwZSI6IkJ1ZmZlciIsImRhdGEiOiJNbDFNdXUyNVZybXhOSW5uSWRqU3RzV0xob0ZhVUQvdEtENS9OV2xCSlFzPSJ9fSwic2lnbmVkSWRlbnRpdHlLZXkiOnsicHJpdmF0ZSI6eyJ0eXBlIjoiQnVmZmVyIiwiZGF0YSI6IndOVFNidHAxRzNYa2NOOUQ1M21qb1UrN0NjQm5VNFFLN3VCOUlVMS9XVzA9In0sInB1YmxpYyI6eyJ0eXBlIjoiQnVmZmVyIiwiZGF0YSI6ImRadm1BV2VpMVprZDNzbGFBV1ZkbDgrSStWWUFnNjE0cEdzb2pFb1JaaTA9In19LCJzaWduZWRQcmVLZXkiOnsia2V5UGFpciI6eyJwcml2YXRlIjp7InR5cGUiOiJCdWZmZXIiLCJkYXRhIjoiWU1oOEVjRW80dnhpQ1FIQVZMZlRvbllZMmVrbER2RTlYWVJ3UU1hR3RIQT0ifSwicHVibGljIjp7InR5cGUiOiJCdWZmZXIiLCJkYXRhIjoiNDZKTnNBVTkzM0ppSFc0K1BQbjM2c0M5V0loMktZRTlaMXp1UTk2UWNoUT0ifX0sInNpZ25hdHVyZSI6eyJ0eXBlIjoiQnVmZmVyIiwiZGF0YSI6IlB1aWZDc0JYWGljWXZCdmZoY1VSOG5odG1XT0NBRzdWN29ZT2wxNVlIcEQzM3BHZ2dCSmxVSU1YQ1JaemxPcGEyUkw1UU5rZE5ZQkhheTgzZ1gxSkRBPT0ifSwia2V5SWQiOjF9LCJyZWdpc3RyYXRpb25JZCI6MTc3LCJhZHZTZWNyZXRLZXkiOiJ0NDBUcU1VSUpiTkdLUC9TQUpIT0cyRU5LOHlXYXhlT1VoblU1VUJENWFFPSIsInByb2Nlc3NlZEhpc3RvcnlNZXNzYWdlcyI6W3sia2V5Ijp7InJlbW90ZUppZCI6IjIzNzY3ODY4NzU5M0BzLndoYXRzYXBwLm5ldCIsImZyb21NZSI6ZmFsc2UsImlkIjoiQUNGRDA5Qzc5RjQ5RjZGMUU4RkE4OUI0OTIxM0QyOTEiLCJwYXJ0aWNpcGFudCI6IiIsImFkZHJlc3NpbmdNb2RlIjoicG4ifSwibWVzc2FnZVRpbWVzdGFtcCI6MTc4NTg2NTA2OX0seyJrZXkiOnsicmVtb3RlSmlkIjoiMjM3Njc4Njg3NTkzQHMud2hhdHNhcHAubmV0IiwiZnJvbU1lIjpmYWxzZSwiaWQiOiJBQzk4NDcyNzVCRjVFQzEyNzM1QThDQjI5NThEMjhEMCIsInBhcnRpY2lwYW50IjoiIiwiYWRkcmVzc2luZ01vZGUiOiJwbiJ9LCJtZXNzYWdlVGltZXN0YW1wIjoxNzg1ODY1MDY5fSx7ImtleSI6eyJyZW1vdGVKaWQiOiIyMzc2Nzg2ODc1OTNAcy53aGF0c2FwcC5uZXQiLCJmcm9tTWUiOmZhbHNlLCJpZCI6IkFDRDRGNkZCREE3MjNBQjEyNkE3NkYxRjBBMzVEN0Q3IiwicGFydGljaXBhbnQiOiIiLCJhZGRyZXNzaW5nTW9kZSI6InBuIn0sIm1lc3NhZ2VUaW1lc3RhbXAiOjE3ODU4NjUwNzF9XSwibmV4dFByZUtleUlkIjo4MTMsImZpcnN0VW51cGxvYWRlZFByZUtleUlkIjo4MTMsImFjY291bnRTeW5jQ291bnRlciI6MSwiYWNjb3VudFNldHRpbmdzIjp7InVuYXJjaGl2ZUNoYXRzIjp0cnVlfSwicmVnaXN0ZXJlZCI6dHJ1ZSwicGFpcmluZ0NvZGUiOiI1TjcxQzVWSCIsIm1lIjp7ImlkIjoiMjM3Njc4Njg3NTkzOjMyQHMud2hhdHNhcHAubmV0IiwibGlkIjoiNzY2NzEyMDY1MjUwMjozMkBsaWQiLCJuYW1lIjoiUsmq4bSF4bSiIEPhtI/htIXhtIfKgCJ9LCJhY2NvdW50Ijp7ImRldGFpbHMiOiJDT3VIamlRUTRzYkkwd1lZQVNBQUtBQT0iLCJhY2NvdW50U2lnbmF0dXJlS2V5IjoiSjgreUZJcDNBTzJmLzkwSXhsM2YrU1lUUktrakZjaTRWU0VhRzJJSCtHTT0iLCJhY2NvdW50U2lnbmF0dXJlIjoiZlh1Sm1QMTZnNzNyQitmNUcvZWpDNUNKM2NJdnRsekxuYVlSQnU3MXVxM2cxY2VXY1dySWMvUk1yZ2Q0ZnBtS3lZVHdWaHJydVdJNXhRTzhIV2MwQmc9PSIsImRldmljZVNpZ25hdHVyZSI6ImY2NGRzZFUyYWNPVG9JdXhYMkE3dG1DYXlsQzA5Vk8vVGxiMHE1TjlnWkR4dFQ3Q1hsbnVGdEdTbVFLcnBNQ1VqVkliYVExamRxblZkV29QeklmRUN3PT0ifSwic2lnbmFsSWRlbnRpdGllcyI6W3siaWRlbnRpZmllciI6eyJuYW1lIjoiNzY2NzEyMDY1MjUwMjozMkBsaWQiLCJkZXZpY2VJZCI6MH0sImlkZW50aWZpZXJLZXkiOnsidHlwZSI6IkJ1ZmZlciIsImRhdGEiOiJCU2ZQc2hTS2R3RHRuLy9kQ01aZDMva21FMFNwSXhYSXVGVWhHaHRpQi9oaiJ9fV0sInBsYXRmb3JtIjoiYW5kcm9pZCIsInJvdXRpbmdJbmZvIjp7InR5cGUiOiJCdWZmZXIiLCJkYXRhIjoiQ0FJSUNBZ0YifSwibGFzdEFjY291bnRTeW5jVGltZXN0YW1wIjoxNzg1ODY1MDY2LCJteUFwcFN0YXRlS2V5SWQiOiJBQUFBQUJEZCJ9",
-API_BASE: process.env.API_BASE || "https://arslan-apis.vercel.app/",
-API_KEY: process.env.API_KEY || "arslanmdofficialadmin",
-AUTO_STATUS_SEEN: process.env.AUTO_STATUS_SEEN || "true",
-AUTO_STATUS_REPLY: process.env.AUTO_STATUS_REPLY || "false",
-AUTO_STATUS_REACT: process.env.AUTO_STATUS_REACT || "false",
-AUTO_STATUS_MSG: process.env.AUTO_STATUS_MSG || "*SEEN YOUR STATUS BY NEMESIS-MD 🤍*",
-AUTO_BIO: process.env.AUTO_BIO || "true",
-GOODBYE: process.env.GOODBYE || "false",
-ADMIN_EVENTS: process.env.ADMIN_EVENTS || "false",
-PREFIX: process.env.PREFIX || ".",
-BOT_NAME: process.env.BOT_NAME || "NEMESIS-MD",
-STICKER_NAME: process.env.STICKER_NAME || "NEMESIS-MD",
-CUSTOM_REACT: process.env.CUSTOM_REACT || "false",
-CUSTOM_REACT_EMOJIS: process.env.CUSTOM_REACT_EMOJIS || "💝,💖,💗,❤️‍🩹,❤️,🧡,💛,💚,💙,💜,🤎,🖤,🤍",
-DELETE_LINKS: process.env.DELETE_LINKS || "false",
-OWNER_NUMBER: process.env.OWNER_NUMBER || "237678687593",
-OWNER_NAME: process.env.OWNER_NAME || "Ridz Coder",
-SEND_WELCOME: process.env.SEND_WELCOME || "true",
-READ_MESSAGE: process.env.READ_MESSAGE || "false",
-READ_CMD_ONLY: process.env.READ_CMD_ONLY || "true",
-AUTO_REACT: process.env.AUTO_REACT || "false",
-ANTI_BAD: process.env.ANTI_BAD || "true",
-ANTI_CALL: process.env.ANTI_CALL || "true",
-MODE: process.env.MODE || "public",
-ANTI_LINK: process.env.ANTI_LINK || "true",
-AUTO_VOICE: process.env.AUTO_VOICE || "true",
-AUTO_STICKER: process.env.AUTO_STICKER || "false",
-AUTO_REPLY: process.env.AUTO_REPLY || "true",
-ALWAYS_ONLINE: process.env.ALWAYS_ONLINE || "true",
-PUBLIC_MODE: process.env.PUBLIC_MODE || "true",
-AUTO_TYPING: process.env.AUTO_TYPING || "true",
-READ_CMD: process.env.READ_CMD || "false",
-DEV: process.env.DEV || "237678687593",
-ANTI_VV: process.env.ANTI_VV || "true",
-ANTI_BOT: process.env.ANTI_BOT || "true",
-ANTI_DELETE: process.env.ANTI_DELETE || "true",
-ANTI_DELETE_TYPE: process.env.ANTI_DELETE_TYPE || "same",
-AUTO_RECORDING: process.env.AUTO_RECORDING || "true",
-AUTO_BLOCK: process.env.AUTO_BLOCK || "false"
+
+
+const config = require('./start/Core/developer')
+
+const settings = {
+
+  SESSION_ID: process.env.SESSION_ID || config.SESSION_ID || "", 
+  ownername: process.env.OWNER_NAME || config.ownername || "Rɪᴅᴢ Cᴏᴅᴇʀ❦", 
+  botname: process.env.BOT_NAME || config.botname || "NEMESIS MD", 
+  prefa: config.prefa || ['.', '!'], 
+  owner: config.owner || ["255611199851"] 
 };
+
+module.exports = settings;
+
+const fs = require('fs');
+let file = require.resolve(__filename);
+fs.watchFile(file, () => {
+  fs.unwatchFile(file);
+  console.log('\x1b[0;32m' + __filename + ' \x1b[1;32mupdated!\x1b[0m');
+  delete require.cache[file];
+  require(file);
+});
