@@ -4,7 +4,7 @@
   "description": "NEMESIS-MD WhatsApp Bot - Advanced WhatsApp Bot with AI features",
   "keywords": ["whatsapp", "bot", "NEMESIS", "md", "ai", "ridzcoder"],
   "repository": "https://github.com/ridzcoder/NEMESIS-MD",
-  "stack": "container",
+  "stack": "heroku-22",
   "scripts": {
     "start": "node index.js"
   },
